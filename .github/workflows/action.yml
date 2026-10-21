@@ -1,0 +1,18 @@
+name: compile-test-linux
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: make
+      - run: ./conversor c2f 100
+name: compile-test-mac
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: make
+      - run: ./conversor c2f 100
