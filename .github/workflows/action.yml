@@ -1,17 +1,16 @@
 name: compile-test
 on: [push]
 jobs:
-  job1:
-    name: compile-test-linux
-    check-bats-version:
+  check-bats-version:
+    job1:
+      name: compile-test-linux
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v6
         - run: make
         - run: ./conversor c2f 100
-  job2:
-    name: compile-test-mac
-    check-bats-version:
+    job2:
+      name: compile-test-mac
       runs-on: macos-latest
       steps:
         - uses: actions/checkout@v6
